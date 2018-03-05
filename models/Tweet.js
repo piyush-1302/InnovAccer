@@ -10,5 +10,5 @@ var userSchema = new Schema({
  
 })
 
-mongoose.model("Details",userSchema,"details");
+mongoose.model("Tweet",userSchema,"tweet");
 

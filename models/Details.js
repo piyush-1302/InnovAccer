@@ -11,7 +11,8 @@ var userSchema = new Schema({
 	"friendsCount" 		: {"type" : Number, "required" : true},
 	"listedCount" 		: {"type" : Number, "required" : true},
 	"favouritesCount"   : {"type" : Number, "required" : true},
-	"language" 			: {"type" : String, "reuired" : true}
+	"language" 			: {"type" : String, "required" : true},
+	//"creationDate"		: {"type" : }
  
 })
 

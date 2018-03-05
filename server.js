@@ -6,7 +6,7 @@ const twit = require('twitter');
 const request = require('request')
 const app = express();
 const port = process.env.PORT || 7000;
-var config = require('./config');
+var config = require('./config/config.js');
 mongoose.connect(process.env.MONGOLAB_URI||"mongodb://pk1302:kr1302@ds137246.mlab.com:37246/innovaccer"	);
 require('./models/Details');
 require('./models/Tweet');
