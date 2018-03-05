@@ -6,7 +6,7 @@ const twit = require('twit');
 const request = require('request')
 const app = express();
 const port = process.env.PORT || 7000;
-var config = require('./config/config.js');
+var config = require('./config.js');
 var T = new twit(config)
 mongoose.connect(process.env.MONGOLAB_URI||"mongodb://pk1302:kr1302@ds137246.mlab.com:37246/innovaccer"	);
 require('./models/Details');
@@ -28,6 +28,7 @@ app.listen(port,function(err){
 
 const id = process.argv[2];
 var tweet = ""
+var name = ""
 if(id == 3){
 	console.log(process.argv.length)
 	for(var i=3;i<process.argv.length;i++){
@@ -42,6 +43,17 @@ else if(id == 4){
 	var r1 = process.argv[3];
 	var r2 = process.argv[4];
 }
+else if(id == 5){
+	console.log(process.argv.length)
+	for(var i=3;i<process.argv.length;i++){
+		if(i == process.argv.length - 1){
+			name = name + process.argv[i];
+			continue;
+		}
+		name = name + process.argv[i] + " ";
+	}
+	console.log(name)
+}
 else{
 	var arg = process.argv[3]
 }
@@ -54,10 +66,14 @@ console.log(id)
 		require("./textSearch.js")(userDetails,tweet)
 	}
 	if(id == 2){
+		console.log(arg);
 		require("./sorting.js")(userDetails,arg)
 	}
 	if(id == 4){
 		require("./retweetCount.js")(userDetails,r1,r2)
+	}
+	if(id == 5){
+		require("./userName.js")(userDetails,name)
 	}
 
 		
