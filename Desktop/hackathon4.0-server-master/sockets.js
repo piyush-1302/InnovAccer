@@ -18,12 +18,11 @@ module.exports = function(io){
     io.sockets.on("connection",handleSockets);
     function handleSockets(socket){
         console.log("a socket connected")
-        socket.on("emitUser",function(data,callback){
+        socket.on("emitUser",function(data){
             console.log("helllo")
             socket.userid = data.userid;
             activeSocket.push(socket);
             activeUser.push(socket.userid);
-            callback(true)
         });
 
         socket.on("getRating",function(data){
@@ -47,7 +46,7 @@ module.exports = function(io){
             })
         });
 
-        socket.on("extractServices",function(callback){
+        socket.on("extractServices",function(){
             console.log("hhhhhhhhhh")
             Service.find({},function(err,service){
                 if(err){
@@ -89,6 +88,7 @@ module.exports = function(io){
                 }else{
                     json.status = 200;
                     json.response = fetchBill;
+                    console.log('fetchbill');
                 }
             })
             socket.emit("knumberDetail ack",json);
