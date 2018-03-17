@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Online payment portal for E-Mitra</title>
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script src="/socket.io-client/dist/socket.io.js"></script>
+        <script>
+            var socket = io.connect();
+           jQuery(function($){
+              /* $(window).load(function(e){
+                   e.preventDefault();
+               });*/
+
+               /*$("#login").click(function(e){
+                   e.preventDefault();
+                   if($("#username").val()!=="" && $("#password").val()!==""){
+                       $("#login").val("Logging......");
+                       let loginData = {};
+                       loginData.username = $("#username").val();
+                       loginData.password = $("#password").val();
+                       $.post("/login",loginData,function(response){
+                            console.log(response)
+                       })
+                   }else{
+                       alert("Username and password field can't be empty")
+                   }
+               })*/
+           })
+        </script>
+    </head>
+    <body>
+    <center>
+        <h1>Login to Dashboard</h1>
+        <form id="loginForm" action="/login" method="post">
+            <input type="text" id="username" placeholder="Enter your consumer id" name="username"><br><br>
+            <input type="text" id="password" placeholder="Enter your password" name="password"><br><br>
+            <input type="submit" id="login" value="Login to dashboard">
+        </form>
+    </center>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "e-mitra",
+  "version": "1.0.0",
+  "description": "E-Mitra wallet system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalrishav/hackathon4.0-server.git"
+  },
+  "author": "LAL RISHAV",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lalrishav/hackathon4.0-server/issues"
+  },
+  "homepage": "https://github.com/lalrishav/hackathon4.0-server#readme",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.5.7",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.2.0",
+    "mongoose": "^5.0.10",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "socket.io": "^2.0.4"
+  }
+}
